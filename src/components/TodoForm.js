@@ -33,8 +33,7 @@ export default class TodoForm extends Component{
                             className="form-control"
                             id="todo_text"
                             value={this.state.todoDescription}
-                            onChange={this.updateTodoDescription.bind(this)}
-                        ></input>
+                            onChange={this.updateTodoDescription.bind(this)} />
                     </div>
                     <div className="col">
                         <button type="submit" className="btn btn-primary mb-2">

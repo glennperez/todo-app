@@ -72,8 +72,7 @@ export default class TodoItem extends Component{
                         <button
                             type="button"
                             className="btn btn-danger"
-                            onClick={onRemove}
-                        >
+                            onClick={onRemove} >
                             Eliminar
                         </button>
                     </div>

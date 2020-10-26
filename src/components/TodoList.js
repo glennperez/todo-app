@@ -43,7 +43,7 @@ export default class TodoList extends Component{
                 <div>
                     <TodoForm
                         description={(inputText) => this.addTodoToList(inputText)} />
-                    <div className="alert alert-danger">no hay datos</div>
+                    <div className="alert alert-danger">No hay datos</div>
                 </div>
             )
         }
@@ -62,8 +62,7 @@ export default class TodoList extends Component{
                                         onUpdateTodo={(todoUpdated) => this.updateTodoFromList(todoUpdated, index)}
                                         onRemove={() => this.removeTodoFromList(index)}
                                         index={index}
-                                        key={index}
-                                    >
+                                        key={index} >
                                         {todo}
                                     </TodoItem>
                                 )

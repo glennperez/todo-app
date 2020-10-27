@@ -5,7 +5,7 @@ export default class TodoItem extends Component{
         super(props);
         this.state = {
             editMode: false,
-            todoDescription: props.children
+            todoDescription: this.props.children
         };
     }
 

@@ -8,7 +8,7 @@ export default class TodoList extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            todos: [],
+            todos: []
         };
     }
 
@@ -19,9 +19,9 @@ export default class TodoList extends Component{
     }
 
     removeTodoFromList(index){
-        let list = this.state.todos.slice();
-        list.splice(index, 1);
-        this.setState({todos: list});
+        this.setState(state => ({
+            todos: state.todos.filter((item, j) => index !== j)
+        }));
     }
 
     addTodoToList(newTodo){
@@ -56,17 +56,15 @@ export default class TodoList extends Component{
                     <TodoItemHead/>
                     <tbody>
                         {
-                            todos.map((todo, index) => {
-                                return(
-                                    <TodoItem
-                                        onUpdateTodo={(todoUpdated) => this.updateTodoFromList(todoUpdated, index)}
-                                        onRemove={() => this.removeTodoFromList(index)}
-                                        index={index}
-                                        key={index} >
+                            todos.map((todo, index) => 
+                                <TodoItem
+                                    key={todo}
+                                    onUpdateTodo={(todoUpdated) => this.updateTodoFromList(todoUpdated, index)}
+                                    onRemove={() => this.removeTodoFromList(index)}
+                                    index={index} >
                                         {todo}
-                                    </TodoItem>
-                                )
-                            })
+                                </TodoItem>
+                            )
                         }
                     </tbody>
                 </table>
